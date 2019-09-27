@@ -1,0 +1,446 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "1. CVC syllables generator"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "pat\n",
+      "pak\n",
+      "pab\n",
+      "pad\n",
+      "pag\n",
+      "tap\n",
+      "tak\n",
+      "tab\n",
+      "tad\n",
+      "tag\n",
+      "kap\n",
+      "kat\n",
+      "kab\n",
+      "kad\n",
+      "kag\n",
+      "bap\n",
+      "bat\n",
+      "bak\n",
+      "bad\n",
+      "bag\n",
+      "dap\n",
+      "dat\n",
+      "dak\n",
+      "dab\n",
+      "dag\n",
+      "gap\n",
+      "gat\n",
+      "gak\n",
+      "gab\n",
+      "gad\n",
+      "pet\n",
+      "pek\n",
+      "peb\n",
+      "ped\n",
+      "peg\n",
+      "tep\n",
+      "tek\n",
+      "teb\n",
+      "ted\n",
+      "teg\n",
+      "kep\n",
+      "ket\n",
+      "keb\n",
+      "ked\n",
+      "keg\n",
+      "bep\n",
+      "bet\n",
+      "bek\n",
+      "bed\n",
+      "beg\n",
+      "dep\n",
+      "det\n",
+      "dek\n",
+      "deb\n",
+      "deg\n",
+      "gep\n",
+      "get\n",
+      "gek\n",
+      "geb\n",
+      "ged\n",
+      "pit\n",
+      "pik\n",
+      "pib\n",
+      "pid\n",
+      "pig\n",
+      "tip\n",
+      "tik\n",
+      "tib\n",
+      "tid\n",
+      "tig\n",
+      "kip\n",
+      "kit\n",
+      "kib\n",
+      "kid\n",
+      "kig\n",
+      "bip\n",
+      "bit\n",
+      "bik\n",
+      "bid\n",
+      "big\n",
+      "dip\n",
+      "dit\n",
+      "dik\n",
+      "dib\n",
+      "dig\n",
+      "gip\n",
+      "git\n",
+      "gik\n",
+      "gib\n",
+      "gid\n",
+      "pot\n",
+      "pok\n",
+      "pob\n",
+      "pod\n",
+      "pog\n",
+      "top\n",
+      "tok\n",
+      "tob\n",
+      "tod\n",
+      "tog\n",
+      "kop\n",
+      "kot\n",
+      "kob\n",
+      "kod\n",
+      "kog\n",
+      "bop\n",
+      "bot\n",
+      "bok\n",
+      "bod\n",
+      "bog\n",
+      "dop\n",
+      "dot\n",
+      "dok\n",
+      "dob\n",
+      "dog\n",
+      "gop\n",
+      "got\n",
+      "gok\n",
+      "gob\n",
+      "god\n",
+      "put\n",
+      "puk\n",
+      "pub\n",
+      "pud\n",
+      "pug\n",
+      "tup\n",
+      "tuk\n",
+      "tub\n",
+      "tud\n",
+      "tug\n",
+      "kup\n",
+      "kut\n",
+      "kub\n",
+      "kud\n",
+      "kug\n",
+      "bup\n",
+      "but\n",
+      "buk\n",
+      "bud\n",
+      "bug\n",
+      "dup\n",
+      "dut\n",
+      "duk\n",
+      "dub\n",
+      "dug\n",
+      "gup\n",
+      "gut\n",
+      "guk\n",
+      "gub\n",
+      "gud\n"
+     ]
+    }
+   ],
+   "source": [
+    "vowels = 'aeiou'\n",
+    "consonants = 'ptkbdg'\n",
+    "for v in vowels:\n",
+    "    for c in consonants:\n",
+    "        for cc in consonants:\n",
+    "            if c == cc:\n",
+    "                continue \n",
+    "            else:\n",
+    "                print(c,v,cc,sep='')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "2. Proper title case function "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def proper_title_case(title):\n",
+    "    nocaps = [\"the\", \"in\", \"on\", \"a\", \"an\"]\n",
+    "    words = title.split()\n",
+    "    res = ''\n",
+    "    for word in range(len(words)):\n",
+    "        if words[word] in nocaps:\n",
+    "            res += words[word]\n",
+    "            res += ' '\n",
+    "        else:\n",
+    "            a= words[word].title()\n",
+    "            res += a \n",
+    "            res+= ' '\n",
+    "    print (res)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "An Ant on a Table \n",
+      "The Cat in the Hat \n"
+     ]
+    }
+   ],
+   "source": [
+    "proper_title_case('An ant on a table')\n",
+    "proper_title_case('The cat in the hat')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "3. Mean function"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2.3666666666666667\n"
+     ]
+    }
+   ],
+   "source": [
+    "def mean(vals):\n",
+    "    for val in range(len(vals)):\n",
+    "        x=sum(vals)\n",
+    "        mean = x/ (len(vals))\n",
+    "    return (mean)\n",
+    "\n",
+    "print (mean([1,5,1.1]))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "4.Standard deviation function"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0.816496580927726\n"
+     ]
+    }
+   ],
+   "source": [
+    "import math\n",
+    "\n",
+    "def sd(vals):\n",
+    "    x=0.0\n",
+    "    mean=sum(vals)/len(vals)\n",
+    "    for k in range(len(vals)):\n",
+    "          x+=vals[k]*vals[k]-2*vals[k]*mean+mean*mean\n",
+    "    x=x/len(vals)\n",
+    "    x=math.sqrt(x)\n",
+    "    return x \n",
+    "print(sd([0,1,2]))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "5.1 Basic CSV parser"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "myspreadsheet =\"\"\"Subject,Height,Occupation\n",
+    "1,74.37000326528938,Psychologist\n",
+    "2,67.49686206937491,Psychologist\n",
+    "3,74.92356434760966,Psychologist\n",
+    "4,64.62372198999978,Psychologist\n",
+    "5,67.76787900026083,Linguist\n",
+    "6,61.50397707923559,Psychologist\n",
+    "7,62.73680961908566,Psychologist\n",
+    "8,68.60803984763902,Linguist\n",
+    "9,70.16090500135535,Psychologist\n",
+    "10,76.81144438287173,Linguist\"\"\"\n",
+    "\n",
+    "def csv_parser(s):\n",
+    "    data=[]\n",
+    "    lines=s.splitlines()\n",
+    "    lines=lines[1:]\n",
+    "    for line in lines:\n",
+    "        l=line.strip().split(',')\n",
+    "        l[0]=int(l[0])\n",
+    "        l[1]=float(l[1])\n",
+    "        data.append(l)\n",
+    "    return data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[1, 74.37000326528938, 'Psychologist'], [2, 67.49686206937491, 'Psychologist'], [3, 74.92356434760966, 'Psychologist'], [4, 64.62372198999978, 'Psychologist'], [5, 67.76787900026083, 'Linguist'], [6, 61.50397707923559, 'Psychologist'], [7, 62.73680961908566, 'Psychologist'], [8, 68.60803984763902, 'Linguist'], [9, 70.16090500135535, 'Psychologist'], [10, 76.81144438287173, 'Linguist']]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(csv_parser(myspreadsheet)) "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "5.2 The mean height"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def mean_height(data):\n",
+    "    par_list=csv_parser(data)\n",
+    "    float_mean=0.0\n",
+    "    for i in range(len(par_list)):\n",
+    "        float_mean+=par_list[i][1]\n",
+    "    return float_mean/len(par_list)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "68.9003206602722\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(mean_height(myspreadsheet)) "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "5.3 Occupation distribution"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def occupation_distribution(data):\n",
+    "    p=csv_parser(data)\n",
+    "    t=tuple(x[2] for x in p)\n",
+    "    occupation_dictionary={'Linguist':t.count('Linguist'),'Psychologist':t.count('Psychologist')}\n",
+    "    return occupation_dictionary"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'Linguist': 3, 'Psychologist': 7}\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(occupation_distribution(myspreadsheet))"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
